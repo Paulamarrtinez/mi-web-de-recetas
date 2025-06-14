@@ -108,3 +108,12 @@ document.addEventListener("click", e => {
     if (receta) preguntarAI(receta);
   }
 });
+
+// script.js - Ejemplo de interacción simple (añadir a favoritos)
+
+document.querySelectorAll('.btn-favorite').forEach(button => {
+  button.addEventListener('click', () => {
+    button.textContent = '✅ Añadido';
+    button.disabled = true;
+  });
+});
