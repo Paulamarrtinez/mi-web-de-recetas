@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Web de Recetas</title>
+  <title>Recetas</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>🍽️ Recetas Caseras</h1>
+    <h1>Recetas con Sabor y Tecnología</h1>
+    <p>Descubre recetas populares y chatea con tu ayudante IA al instante</p>
     <input type="text" placeholder="Buscar por nombre o ingrediente...">
   </header>
 
@@ -19,11 +20,23 @@
       <p><strong>Instrucciones:</strong> Hervir los macarrones, preparar salsa, mezclar todo.</p>
     </section>
 
-    <!-- Aquí puedes ir copiando más recetas parecidas -->
+   
+  </main> <main id="recetas-container">
   </main>
+  
+  <div id="chat-modal" class="hidden">
+    <div class="chat-content">
+      <span id="close-chat">×</span>
+      <h2>🤖 Chat con IA</h2>
+      <p>(Esta es una demo visual. Puedes conectar GPT real más adelante)</p>
+      <input type="text" placeholder="Escribe tu pregunta..." disabled>
+    </div>
+  </div>
 
   <footer>
-    <p>© 2025 Recetas de Paula</p>
+    <p>© 2025 Web de Recetas con IA y con amor.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
