@@ -1,39 +1,114 @@
+*{
+ box-sizing: border-box;
+}
 body {
-  font-family: sans-serif;
-  margin: 20px;
-  background: #fefefe;
-  color: #333333;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
 header {
-  background: #ffbf69;
-  padding: 20px;
+  background: linear-gradient(135deg, #ffa726, #fb8c00);
+  color: white;
   text-align: center;
-}
-
-header input {
-  padding: 10px;
-  width: 80%;
-  margin-top: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  padding: 40px 20px;
 }
 
 main {
-  padding: 20px;
+  padding: 30px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
 }
 
 .receta {
-  background: white;
-  padding: 15px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.2s;
+}
+
+.receta:hover {
+  transform: scale(1.02);
+}
+
+.receta img {
+  width: 100%;
   border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.receta h3 {
+  color: #ef6c00;
+  margin-top: 10px;
+}
+
+ul, ol {
+  padding-left: 20px;
+}
+
+.boton-chat {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #ef6c00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.boton-chat:hover {
+  background-color: #e65100;
+}
+
+/* Modal del chat */
+#chat-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.chat-content input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+#close-chat {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 footer {
+  background-color: #ffe0b2;
   text-align: center;
   padding: 20px;
-  background: #eee;
   margin-top: 40px;
 }
