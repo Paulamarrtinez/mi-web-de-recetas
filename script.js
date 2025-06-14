@@ -81,3 +81,30 @@ document.addEventListener("click", e => {
 });
 
 closeBtn.onclick = () => modal.classList.add("hidden");
+
+// Función que hace la petición al backend con OpenAI
+async function preguntarAI(receta) {
+  const pregunta = prompt(`¿Qué quieres saber de la receta "${receta}"?`);
+  if (!pregunta) return;
+
+  try {
+    const resp = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ receta, pregunta })
+    });
+
+    const data = await resp.json();
+    alert(data.respuesta); // Mostrar la respuesta de la IA
+  } catch (err) {
+    alert("Error al conectar con la IA. Revisa la consola.");
+    console.error(err);
+  }
+}
+
+document.addEventListener("click", e => {
+  if (e.target.classList.contains("boton-chat")) {
+    const receta = e.target.closest('.receta, .card')?.querySelector('h3')?.innerText;
+    if (receta) preguntarAI(receta);
+  }
+});
